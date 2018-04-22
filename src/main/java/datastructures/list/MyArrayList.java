@@ -10,13 +10,12 @@ public class MyArrayList<E> implements IMyArrayList<E> {
 
     @SuppressWarnings("unchecked")
     public MyArrayList(int size) {
-        array = (E[]) new String[DEFAULT_CAPACITY];
+        this.array = (E[]) new Object[size];
     }
 
     @SuppressWarnings("unchecked")
     public MyArrayList() {
-        // FIXME: currently only works with string
-        array = (E[]) new String[DEFAULT_CAPACITY];
+        this.array = (E[]) new Object[DEFAULT_CAPACITY];
     }
 
     public E getElement(int i) {

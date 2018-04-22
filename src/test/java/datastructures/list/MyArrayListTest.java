@@ -52,4 +52,12 @@ public class MyArrayListTest {
                 "[Ford, BMW, Audi, Landrover, null]");
     }
 
+    @Test(expectedExceptions = ArrayIndexOutOfBoundsException.class)
+    void testArrayLimitedSize() {
+        MyArrayList<Integer> list = new MyArrayList<>(10);
+        for (int i = 0; i < 11; i ++) {
+            list.append(i);
+        }
+    }
+
 }
