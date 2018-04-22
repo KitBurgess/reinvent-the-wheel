@@ -1,4 +1,4 @@
-package datastructures;
+package datastructures.list;
 
 
 /**
@@ -6,7 +6,7 @@ package datastructures;
  *
  * @param <E>
  */
-public interface MylistImpl<E> {
+public interface IMyArrayList<E> {
 
     void append(E entry);
 

@@ -1,4 +1,4 @@
-package datastructures;
+package datastructures.list;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -43,6 +43,13 @@ public class MyArrayListTest {
     @Test
     void testSize() {
         assertEquals(populatedList.size(), 3);
+    }
+
+    @Test
+    void testPrepend() {
+        populatedList.prepend("Ford");
+        assertEquals(populatedList.toString(),
+                "[Ford, BMW, Audi, Landrover, null]");
     }
 
 }
