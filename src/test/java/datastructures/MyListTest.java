@@ -17,7 +17,7 @@ public class MyListTest {
     void testAddEntry() {
         MyList<String> list = new MyList<>();
         list.append("BMW");
-        Assert.assertEquals(list.getElement(0), "BMW");
+        Assert.assertEquals(list.getHead(), "BMW");
     }
 
 }
