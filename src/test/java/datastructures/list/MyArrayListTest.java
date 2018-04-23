@@ -23,6 +23,8 @@ public class MyArrayListTest {
     @Test
     void testDefaultListIsEmpty() {
         assertTrue(emptyList.isempty());
+        assertEquals(emptyList.size(), 0);
+
     }
 
     @Test

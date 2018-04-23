@@ -6,7 +6,7 @@ package datastructures.list;
  *
  * @param <E>
  */
-public interface IMyArrayList<E> {
+public interface MyList<E> {
 
     void append(E entry);
 

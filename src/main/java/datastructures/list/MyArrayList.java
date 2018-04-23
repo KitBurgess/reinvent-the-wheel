@@ -2,7 +2,7 @@ package datastructures.list;
 
 import java.util.Arrays;
 
-public class MyArrayList<E> implements IMyArrayList<E> {
+public class MyArrayList<E> implements MyList<E> {
 
     private E[] array;
     private int nextIndex = 0;
@@ -39,10 +39,10 @@ public class MyArrayList<E> implements IMyArrayList<E> {
         return nextIndex;
     }
 
-    public boolean isempty() { return nextIndex == 0;}
+    public boolean isempty() { return size() == 0;}
 
     public E getHead() {
-        return array[0];
+        return getElement(0);
     }
 
     @Override
