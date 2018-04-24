@@ -1,13 +1,15 @@
 package datastructures.list;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class MyLinkedListTest {
     @Test
     public void testAppend() {
+        MyLinkedList<String> list = new MyLinkedList<>("hello");
+        list.append("world");
+        assertEquals(list.toString(), "[hello, world]");
     }
 
     @Test
