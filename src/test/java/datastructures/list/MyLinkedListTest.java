@@ -9,8 +9,8 @@ import static org.testng.Assert.assertTrue;
 
 public class MyLinkedListTest {
 
-    MyLinkedList<String> newPopulatedList;
-    MyLinkedList<String> newEmptyList;
+    private MyLinkedList<String> newPopulatedList;
+    private MyLinkedList<String> newEmptyList;
 
     @BeforeMethod
     private void createLists() {
@@ -38,11 +38,11 @@ public class MyLinkedListTest {
         newEmptyList.prepend("hello");
         assertEquals(newEmptyList.toString(), "[hello, world]");
     }
-
-    @Test
-    public void testSize() {
-        assertEquals(newPopulatedList.size(), 1);
-    }
+//
+//    @Test
+//    public void testSize() {
+//        assertEquals(newPopulatedList.size(), 1);
+//    }
 
     @Test
     public void testIsNotempty() {
