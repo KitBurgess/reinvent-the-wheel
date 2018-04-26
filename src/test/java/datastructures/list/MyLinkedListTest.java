@@ -9,6 +9,15 @@ public class MyLinkedListTest {
     public void testAppend() {
         MyLinkedList<String> list = new MyLinkedList<>("hello");
         list.append("world");
+        list.append("mate");
+        assertEquals(list.toString(), "[hello, world, mate]");
+    }
+
+    @Test
+    public void testAppendEmptyConstructor() {
+        MyLinkedList<String> list = new MyLinkedList<>();
+        list.append("hello");
+        list.append("world");
         assertEquals(list.toString(), "[hello, world]");
     }
 
@@ -30,5 +39,10 @@ public class MyLinkedListTest {
 
     @Test
     public void testGetElement() {
+    }
+
+    @Test
+    public void testToString() {
+
     }
 }
