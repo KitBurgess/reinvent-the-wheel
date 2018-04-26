@@ -12,25 +12,31 @@ public class MyLinkedList<E> implements MyList<E> {
     }
 
     public MyLinkedList() {
-        this.head = null;
-        this.tail = null;
+        this.head = new Node(null, null);
+        this.tail = head;
     }
 
     public void append(E entry) {
-        Node newTail = new Node(entry, null);
-        if (tail != null) {
-            tail.setNextNode(newTail);
-            setTail(newTail);
+            if (head.data == null) {
+            this.head = new Node(entry, null);
+            this.tail = head;
         } else {
+            Node newTail = new Node(entry, null);
+            tail.setNextNode(newTail);
             setTail(newTail);
         }
     }
 
     private void setTail(Node newTail) {
-        this.tail = newTail;
+        tail = newTail;
     }
 
     public void prepend(E entry) {
+        if (entry != null) {
+
+        } else {
+            throw new IllegalArgumentException("Attempted to prepend invalid entry to list");
+        }
     }
 
     public int size() {
