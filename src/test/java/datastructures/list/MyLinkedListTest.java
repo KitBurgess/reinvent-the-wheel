@@ -1,48 +1,68 @@
 package datastructures.list;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class MyLinkedListTest {
+
+    MyLinkedList<String> newPopulatedList;
+    MyLinkedList<String> newEmptyList;
+
+    @BeforeMethod
+    private void createLists() {
+        newPopulatedList = new MyLinkedList<>("foo");
+        newEmptyList = new MyLinkedList<>();
+    }
+
     @Test
     public void testAppend() {
-        MyLinkedList<String> list = new MyLinkedList<>("hello");
-        list.append("world");
-        list.append("mate");
-        assertEquals(list.toString(), "[hello, world, mate]");
+        newPopulatedList.append("hello");
+        newPopulatedList.append("world");
+        assertEquals(newPopulatedList.toString(), "[foo, hello, world]");
     }
 
     @Test
     public void testAppendEmptyConstructor() {
-        MyLinkedList<String> list = new MyLinkedList<>();
-        list.append("hello");
-        list.append("world");
-        assertEquals(list.toString(), "[hello, world]");
+        newEmptyList.append("hello");
+        newEmptyList.append("world");
+        assertEquals(newEmptyList.toString(), "[hello, world]");
     }
 
     @Test
     public void testPrepend() {
+        newEmptyList.append("world");
+        newEmptyList.prepend("hello");
+        assertEquals(newEmptyList.toString(), "[hello, world]");
     }
 
     @Test
     public void testSize() {
+        assertEquals(newPopulatedList.size(), 1);
+    }
+
+    @Test
+    public void testIsNotempty() {
+        assertFalse(newPopulatedList.isempty());
     }
 
     @Test
     public void testIsempty() {
+        assertTrue(newEmptyList.isempty());
     }
-
-    @Test
-    public void testGetHead() {
-    }
-
-    @Test
-    public void testGetElement() {
-    }
-
-    @Test
-    public void testToString() {
-
-    }
+//    @Test
+//    public void testGetHead() {
+//    }
+//
+//    @Test
+//    public void testGetElement() {
+//    }
+//
+//    @Test
+//    public void testToString() {
+//
+//    }
 }

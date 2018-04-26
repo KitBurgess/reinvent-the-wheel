@@ -7,35 +7,37 @@ public class MyLinkedList<E> implements MyList<E> {
     private Node tail;
 
     public MyLinkedList(E startData) {
+        init(startData);
+    }
+
+
+    public MyLinkedList() {
+        init(null);
+    }
+
+    private void init(E startData) {
         this.head = new Node(startData, null);
         this.tail = head;
     }
 
-    public MyLinkedList() {
-        this.head = new Node(null, null);
-        this.tail = head;
-    }
-
     public void append(E entry) {
-            if (head.data == null) {
-            this.head = new Node(entry, null);
-            this.tail = head;
+        if (head.data == null) {
+            init(entry);
         } else {
             Node newTail = new Node(entry, null);
             tail.setNextNode(newTail);
-            setTail(newTail);
+            tail = newTail;
         }
     }
 
-    private void setTail(Node newTail) {
-        tail = newTail;
-    }
 
     public void prepend(E entry) {
-        if (entry != null) {
-
+        if (head.data == null) {
+            init(entry);
         } else {
-            throw new IllegalArgumentException("Attempted to prepend invalid entry to list");
+            Node newHead = new Node(entry, null);
+            newHead.setNextNode(head);
+            head = newHead;
         }
     }
 
@@ -44,7 +46,7 @@ public class MyLinkedList<E> implements MyList<E> {
     }
 
     public boolean isempty() {
-        return false;
+        return head.data == null;
     }
 
     public E getHead() {
